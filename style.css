@@ -154,12 +154,15 @@ section {
 footer {
     width: 100%;
     text-align: center;
-    /* position: fixed; */
     padding: 1rem;
     bottom: 0;
     color: #222;
     background: rgba(119, 119, 245, 0.8);
     color: #fff;
+}
+
+footer p {
+    margin-bottom: 0;
 }
 
 footer p > a {
