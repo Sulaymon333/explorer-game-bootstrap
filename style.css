@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,700;1,300&family=Audiowide&family=Baloo+Bhaina+2:wght@700&display=swap');
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --main-background: rgba(119, 119, 245, 0.8);
+    --assent-color: orange;
+    --h1-font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    --h2-font-size: clamp(1.3rem, 1.5vw, 2rem);
+    --p-font-size: clamp(1rem, 1vw, 1.4rem);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+header {
+    background: var(--main-background);
+}
+.container {
+    max-width: 90vw !important;
+}
+
+.navbar-brand {
+    color: white !important;
+    font-size: var(--h1-font-size);
+    font-weight: bold;
+}
+
+.assent {
+    color: var(--assent-color);
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.navbar {
+    padding: 0;
+}
+.navbar li {
+    display: flex;
+    align-items: center;
+    padding: 0 0.9rem;
+    height: 80px;
+    font-size: var(--p-font-size);
+}
+.navbar li:hover {
+    background: var(--main-background);
+}
+.navbar li a {
+    color: white !important;
+    text-decoration: none;
+    position: relative;
+    text-transform: capitalize;
+}
+.navbar li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: clamp(2px, 0.3vw, 4px);
+    background: orange;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.navbar li:hover a::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar li a.selected {
+    border-bottom: clamp(2px, 0.3vw, 4px) solid orange;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255,255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+section {
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+
+/* hero */
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    min-height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.hero-home {
+    background-image: url('./images/main-bg-min.png');
+}
+
+.container {
+    color: white;
+    width: 80%;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.container h1 {
+    font-size: var(--h1-font-size);
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+.container p,
+.description {
+    font-size: var(--p-font-size);
+    margin-bottom: 2.5rem;
+    text-transform: initial;
+}
+.game-intro {
+    background: linear-gradient(180deg, rgba(152, 145, 225, 0.62) 0%, rgba(152, 145, 225, 0) 100%);
+    margin: 7vw 0 1vw 0;
+    width: 60%;
+    padding: 1.5rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(119, 119, 245, 0.7);
+    mix-blend-mode: overlay;
+}
+
+/*==== FOOTER ====*/
+footer {
+    width: 100%;
+    text-align: center;
+    /* position: fixed; */
+    padding: 1rem;
+    bottom: 0;
+    color: #222;
+    background: rgba(119, 119, 245, 0.8);
+    color: #fff;
+}
+
+footer p > a {
+    background: white;
+    color: var(--main-background);
+    padding: 0 0.3rem;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    font-size: var(--p-font-size);
+    border: solid 3px rgb(119, 119, 245);
+    background: rgba(119, 119, 245, 0.8);
+    border-radius: 0.3rem;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+}
+
+.btn:hover {
+    border-color: orange;
+    background-color: rgb(119, 119, 245);
+}
+
+@media screen and (min-width: 801px) {
+    nav {
+        position: relative;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .navbar {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 0;
+    }
+    .game-intro {
+        width: 100%;
+    }
+    .description {
+        width: 100%;
+    }
+}
