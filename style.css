@@ -190,15 +190,6 @@ footer p > a {
     background-color: rgb(119, 119, 245);
 }
 
-@media screen and (min-width: 801px) {
-    nav {
-        position: relative;
-    }
-    .menu-toggle {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 800px) {
     .navbar {
         padding-top: 0.5rem;
